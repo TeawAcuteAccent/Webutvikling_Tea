@@ -24,10 +24,10 @@
                 </div>
                 <ul id="menu" class="hidden">
                         <li><button id="close">X</button></li>
-                        <li><a href="#">Hjem</a>></li>
-                        <li><a href="#">Om oss</a>></li>
-                        <li><a href="#">Tjenester</a>></li>
-                        <li><a href="#">Kontakt oss</a>></li>
+                        <li><a href="#">Hjem</a></li>
+                        <li><a href="#">Om oss</a></li>
+                        <li><a href="#">Tjenester</a></li>
+                        <li><a href="#">Kontakt oss</a></li>
                 </ul>
             </nav>
             <section id="hero">
@@ -37,15 +37,17 @@
      </header>
      <main>
         <section class="highlight">
-            <figure>
+            <figure> <!--Figure brukes når illustrasjon ikke gir mening, hadde man tatt det vekk, ville ikke siden mistet betydning-->
                 <picture>
                     <source media="(min-width:1200px)" srcset="https://picsum.photos/1200/1200">
                     <source media="(min-width:900px)" srcset="https://picsum.photos/900/900">
                 <img src="https://picsum.photos/600/600" alt="">
                 </picture>
             </figure>
-            <h2>Turning Ideas Into Reality</h2>
+            <section>
+                 <h2>Turning Ideas Into Reality</h2>
             <p>We help you realize your dreams</p>
+            </section>
         </section>
 
          <section class="highlight">
@@ -56,26 +58,34 @@
                 <img src="https://picsum.photos/600/600" alt="">
                 </picture>
             </figure>
-            <h2>Turning Ideas Into Reality</h2>
-            <p>We help you realize your dreams</p>
+            <section>
+                <h2>Turning Ideas Into Reality</h2>
+                <p>We help you realize your dreams</p>
+            </section>
         </section>
 
         <section id="services">
             <h2>Our Services</h2>
             <article class="service-card">
                 <i class="fa-solid fa-chart-simple"></i>
-                <h3>SEO</h3>
-                <p>Our service will make you very happy</p>
+                <section>
+                    <h3>SEO</h3>
+                    <p>Our service will make you very happy</p>
+                </section>
             </article>
             <article class="service-card">
                 <i class="fa-solid fa-suitcase"></i>
-                <h3>Website Design</h3>
-                <p>Our service will make you very happy</p>
+                <section>
+                    <h3>Website Design</h3>
+                    <p>Our service will make you very happy</p>
+                </section>
             </article>
             <article class="service-card">
                 <i class="fa-solid fa-globe"></i>
-                <h3>SEM</h3>
-                <p>Our service will make you very happy</p>
+                <section>
+                    <h3>SEM</h3>
+                    <p>Our service will make you very happy</p>
+                </section>
             </article>
         </section>
      </main>
