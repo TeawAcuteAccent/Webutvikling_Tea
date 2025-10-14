@@ -89,9 +89,9 @@ main{
     position: absolute;
     border: 11px double blue;
     width: 30px;
-    top: 55px;
+    top: 110px;
     left: 420px;
-    height: 470px
+    height: 410px
 }
 
 .small {
@@ -122,16 +122,17 @@ main{
       left: 20px;
       /*Animering*/
       /*navn..........*/
-      animation-name: ghost;
+      animation-name: ghost, partytime;
       /*varighet..........*/
-      animation-duration: 10s;
+      animation-duration: 15s, 1s;
       /*rettning på animajonen..........*/
-      animation-direction: alternate-reverse;
+      animation-direction: alternate;
       /*hva skjer når animasjon avsluttes..........*/
-      
+      animation-fill-mode: none;
       /*hvor mange ganger skal animasjonen gjentas..........*/
-      animation-iteration-count: loop;
+      animation-iteration-count: infinite;
       /*hvordan skal tiden være fordelt på animasjonen..........*/
+      animation-timing-function: ease-in-out, linear;
 
 }
 
@@ -143,88 +144,97 @@ main{
     /* START
        Bruk startposisjonen definert i .fa-ghost (samme x og y som der). */
     0%{
-      left: 282px;  /* x = startverdi fra .fa-ghost */
-      top: 20px;  /* y = startverdi fra .fa-ghost */
+      left: 20px;  /* x = startverdi fra .fa-ghost */
+      top: 282px;  /* y = startverdi fra .fa-ghost */
     }
   
     /* TRINN 2
        Beveg spøkelset HØYRE ca. 309px fra startposisjon.
        Hold høyden (y) uendret. */
     10%{
-      left: 591px;  /* x = start + ~309px */
-      top: 20px;  /* y = uendret */
+      left: 329px;  /* x = start + ~309px */
+      top: 282px;  /* y = uendret */
     }
   
     /* TRINN 3
        Behold x uendret (samme som forrige trinn).
        Beveg OPP ca. 270px (fra midthøyde til øverste løype). */
     20%{
-      left: 591px;  /* x = uendret */
-      top: 290px;  /* y = opp ~270px */
+      left: 329px;  /* x = uendret */
+      top: 12px;  /* y = opp ~270px */
     }
   
     /* TRINN 4
        Beveg HØYRE ca. 192px langs øverste løype.
        Hold y uendret (fortsatt øverst). */
     30%{
-      left: 783px;  /* x = forrige + ~192px */
-      top: 290px;  /* y = uendret (øverst) */
+      left: 521px;  /* x = forrige + ~192px */
+      top: 12x;  /* y = uendret (øverst) */
     }
   
     /* TRINN 5
        Behold x uendret.
        Beveg NED ca. 270px tilbake til midthøyde. */
     40%{
-      left: 783px;  /* x = uendret */
-      top: 20px;  /* y = ned ~270px (til midthøyde) */
+      left: 521px;  /* x = uendret */
+      top: 282px;  /* y = ned ~270px (til midthøyde) */
     }
   
     /* TRINN 6
        Beveg HØYRE ca. 299px langs midthøyden til høyre side.
        Hold y uendret. */
     50%{
-      left: 1082px;  /* x = forrige + ~299px */
-      top: 20px;  /* y = uendret (midthøyde) */
+      left: 820px;  /* x = forrige + ~299px */
+      top: 282px;  /* y = uendret (midthøyde) */
     }
   
     /* TRINN 7
        Behold x uendret (ytterst til høyre).
        Beveg NED ca. 256px til nederste løype. */
     60%{
-      left: 1082px;  /* x = uendret (helt til høyre) */
-      top: -236px;  /* y = ned ~256px (nederste løype) */
+      left: 820px;  /* x = uendret (helt til høyre) */
+      top: 538px;  /* y = ned ~256px (nederste løype) */
     }
   
     /* TRINN 8
        Beveg VENSTRE ca. 493px langs nederste løype.
        Hold y uendret (nederst). */
     70%{
-      left: 589px;  /* x = forrige − ~493px */
-      top: -236px;  /* y = uendret (nederst) */
+      left: 327px;  /* x = forrige − ~493px */
+      top: 538px;  /* y = uendret (nederst) */
     }
   
     /* TRINN 9
        Behold x uendret (indre venstreside).
        Beveg OPP ca. 256px tilbake til midthøyde. */
     80%{
-      left: 589px;  /* x = uendret (indre venstre) */
-      top: 20px;  /* y = opp ~256px (midthøyde) */
+      left: 327px;  /* x = uendret (indre venstre) */
+      top: 282px;  /* y = opp ~256px (midthøyde) */
     }
   
     /* TRINN 10
        Beveg VENSTRE ca. 307px tilbake mot startens venstreposisjon.
        Hold y uendret (midthøyde). */
     90%{
-      left: 282px;  /* x = forrige − ~307px (tilbake mot start-x) */
-      top: 20px;  /* y = uendret (midthøyde) */
+      left: 20px;  /* x = forrige − ~307px (tilbake mot start-x) */
+      top: 282px;  /* y = uendret (midthøyde) */
     }
   
     /* TRINN 11 (slutten av runden)
        Beveg HØYRE ca. 307px til «indre venstreside» (mellompunkt før neste runde).
        Hold y uendret (midthøyde). */
     100%{
-      left: 489px;  /* x = forrige + ~307px (indre venstre) */
-      top: 20px;  /* y = uendret (midthøyde) */
+      left: 327px;  /* x = forrige + ~307px (indre venstre) */
+      top: 282px;  /* y = uendret (midthøyde) */
+    }
+  }
+
+  @keyframes partytime{
+    from{
+      color:#ffdb1a;
+    }
+    to{
+      color: #ff0cc2;
     }
   }
   
@@ -247,7 +257,7 @@ main{
     animation-timing-function: ease-in-out;
 }
 
-..... pacman{
+@keyframes pacman{
     from{
         background-image: url('../img/eat.png');
     }
