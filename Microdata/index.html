@@ -28,44 +28,56 @@
                 <li><a href="#">Sale</a></li>
             </ul>
         </nav>
-        <main>
-            <nav id="breadcrumbs">
+        <main itemscope itemtype="https://schema.org/Product"> <!--La til itemscope og itemtype-->
+            <nav id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"> <!--La til nytt ordforåd-->
                 <ul>
-                    <li>
-                        <a href="index.html">Home /</a>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <meta itemprop="position" content="1">
+                        <a itemprop="item" href="index.html"><span itemprop="name">Home</span>/</a>
+                    </li> <!--span bruker vi hvis vi skal isoluere små deler av tekster-->
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <meta itemprop="position" content="2">
+                        <a itemprop="item" href="index.html"><span itemprop="name">Running shoes</span>/</a>
                     </li>
-                    <li>
-                        <a href="index.html">Running shoes /</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Pink runners</a>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <meta itemprop="position" content="3">
+                        <a itemprop="item" href="index.html"><span itemprop="name">Pink runners</span></a>
                     </li>
                 </ul>
             </nav>
 
             <figure class="left-content-container flex-items">
-                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies" id="active-img">
-                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies">
-                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies">
-                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies">
+                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies" id="active-img" itemprop="image">
+                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies" itemprop="image">
+                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies" itemprop="image">
+                <img src="img/pink-shoes.jpeg" alt="Rosa joggesko fra merket Shosies" itemprop="image">
+                <!--La til itemprop="image"-->
             </figure>
 
             <section class="right-content-container flex-items">
                 <span id="brand-name">
-                    <a href="#">Shosies</a>
+                    <a href="#" itemprop="category">Shosies</a> <!--la til itemprop="category"-->
                 </span>
-                <h3>Pink runners</h3>
-                <span>1499,00 kr</span>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
+                <h3 itemprop="name">Pink runners</h3> <!--Itemprop lagt til, vi kan ikke finne dem på, vi må følge det i schema.org ordboka-->
+
+               <div itemscope itemtype="https://schema.org/Offer"> <!--Vi bruker div her fordi vi kun legger til data rundt et element, og det er ikke noen semantisk data som gir mening-->
+                <meta itemprop="priceCurrency" content="NOK"> <!--legger på usynlig data for å si hva valutan skal være-->
+                <span itemprop="price" content="1499">1499,00 kr</span> <!--La til itemprop="price"-->
+               </div>
+    
+               
+                <p itemprop="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
+                <!--la til itemprop="description"-->
                 <form>
                     <label for="size">Size:</label>
                     <select name="size" id="size">
-                        <option value="36">36</option>
-                        <option value="37">37</option>
-                        <option value="38">38</option>
-                        <option value="39">39</option>
-                        <option value="40">40</option>
-                        <option value="41">41</option>
+                        <option value="36" itemprop="size">36</option>
+                        <option value="37" itemprop="size">37</option>
+                        <option value="38" itemprop="size">38</option>
+                        <option value="39" itemprop="size">39</option>
+                        <option value="40" itemprop="size">40</option>
+                        <option value="41" itemprop="size">41</option>
+                        <!--La til itemprop="size"-->
                     </select>
                     <button>Add to cart</button>
                 </form>
